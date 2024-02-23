@@ -4,4 +4,6 @@ import "./elements";
 import "./pages";
 const TITLE = document.title;
 window.TITLE = TITLE;
+const ENVS = {ephSelect: "eph_select"};
+window.ENVS = ENVS;
 document.querySelector("#app").innerHTML = getPage("main")

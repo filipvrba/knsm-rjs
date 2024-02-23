@@ -39,7 +39,11 @@ export default class ElmCard < HTMLElement
   end
 
   def image_url()
-    @values.image
+    unless @values.image == "http://www.konopneseminka.cz"
+      @values.image
+    else
+      "no_image.jpg"
+    end
   end
 
   def name()

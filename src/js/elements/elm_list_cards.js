@@ -3,18 +3,19 @@ import productsObj from "../../json/products.json";
 export default class ElmListCards extends HTMLElement {
   constructor() {
     super();
+    this._hElhSelect = d => this.select(d.detail.value);
     this._maxLength = 10;
     this._pagesCount = parseInt(productsObj.products.length / this._maxLength);
-    this._currentPage = 3;
+    this._currentPage = 0;
     this.initElm()
   };
 
   connectedCallback() {
-    return null
+    return this.addEventListener(ENVS.ephSelect, this._hElhSelect)
   };
 
   disconnectedCallback() {
-    return null
+    return this.removeEventListener(ENVS.ephSelect, this._hElhSelect)
   };
 
   initElm() {
@@ -48,10 +49,19 @@ export default class ElmListCards extends HTMLElement {
     };
 
     let template = `${`
+<elm-pagination page='${this._currentPage}' pages='${this._pagesCount}' target='elm-list-cards'></elm-pagination>
+<hr>
 <div class='row row-cols-1 row-cols-sm-2 g-4'>
   ${lGridElements(this._currentPage)}
 </div>
+<hr>
+<elm-pagination page='${this._currentPage}' pages='${this._pagesCount}' target='elm-list-cards'></elm-pagination>
     `}`;
     return this.innerHTML = template
+  };
+
+  select(value) {
+    this._currentPage = value;
+    return this.initElm()
   }
 }

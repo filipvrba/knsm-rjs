@@ -16,3 +16,6 @@ window.customElements.define('elm-card', ElmCard)
 
 import 'ElmListCards', './elements/elm_list_cards'
 window.customElements.define('elm-list-cards', ElmListCards)
+
+import 'ElmPagination', './elements/elm_pagination'
+window.customElements.define('elm-pagination', ElmPagination)

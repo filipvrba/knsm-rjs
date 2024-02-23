@@ -38,7 +38,7 @@ export default class ElmCard extends HTMLElement {
   };
 
   imageUrl() {
-    return this._values.image
+    return this._values.image === "http://www.konopneseminka.cz" ? "no_image.jpg" : this._values.image
   };
 
   name() {

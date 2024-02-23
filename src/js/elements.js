@@ -9,4 +9,6 @@ window.customElements.define("elm-error", ElmError);
 import ElmCard from "./elements/elm_card";
 window.customElements.define("elm-card", ElmCard);
 import ElmListCards from "./elements/elm_list_cards";
-window.customElements.define("elm-list-cards", ElmListCards)
+window.customElements.define("elm-list-cards", ElmListCards);
+import ElmPagination from "./elements/elm_pagination";
+window.customElements.define("elm-pagination", ElmPagination)
