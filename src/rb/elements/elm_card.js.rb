@@ -40,7 +40,7 @@ export default class ElmCard < HTMLElement
 
   def image_url()
     unless @values.image == "http://www.konopneseminka.cz"
-      @values.image
+      "/imgs/" + @values.image.split('/').last
     else
       "no_image.jpg"
     end
