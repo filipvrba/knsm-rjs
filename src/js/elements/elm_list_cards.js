@@ -5,7 +5,7 @@ export default class ElmListCards extends HTMLElement {
     super();
     this._maxLength = 10;
     this._pagesCount = parseInt(productsObj.products.length / this._maxLength);
-    this._currentPage = 0;
+    this._currentPage = 3;
     this.initElm()
   };
 
@@ -22,10 +22,10 @@ export default class ElmListCards extends HTMLElement {
       let colOne = [];
       let colTwo = [];
       let template = `${`
-<div class='col-sm-6 mb-3 mb-sm-0'>
+<div class='col'>
   *
 </div>
-<div class='col-sm-6'>
+<div class='col'>
   **
 </div>
       `}`;
@@ -47,7 +47,11 @@ export default class ElmListCards extends HTMLElement {
       )
     };
 
-    let template = `${`\n<div class='row'>\n  ${lGridElements(this._currentPage)}\n</div>\n    `}`;
+    let template = `${`
+<div class='row row-cols-1 row-cols-sm-2 g-4'>
+  ${lGridElements(this._currentPage)}
+</div>
+    `}`;
     return this.innerHTML = template
   }
 }

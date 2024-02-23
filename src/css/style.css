@@ -1,0 +1,11 @@
+.fix-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}

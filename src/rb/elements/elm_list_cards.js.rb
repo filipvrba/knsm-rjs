@@ -6,7 +6,7 @@ export default class ElmListCards < HTMLElement
 
     @max_length  = 10
     @pages_count = (products_obj.products.length / @max_length).to_i
-    @current_page = 0
+    @current_page = 3
     
     init_elm()
   end
@@ -22,10 +22,10 @@ export default class ElmListCards < HTMLElement
       col_one = []
       col_two = []
       template = """
-<div class='col-sm-6 mb-3 mb-sm-0'>
+<div class='col'>
   *
 </div>
-<div class='col-sm-6'>
+<div class='col'>
   **
 </div>
       """
@@ -45,7 +45,7 @@ export default class ElmListCards < HTMLElement
     end
     
     template = """
-<div class='row'>
+<div class='row row-cols-1 row-cols-sm-2 g-4'>
   #{l_grid_elements(@current_page)}
 </div>
     """
