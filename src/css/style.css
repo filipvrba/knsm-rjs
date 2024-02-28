@@ -1,3 +1,7 @@
+elm-list-products tbody tr {
+  cursor: pointer;
+}
+
 .fix-img {
   width: 100%;
   height: auto;

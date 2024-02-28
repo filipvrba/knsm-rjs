@@ -37,8 +37,9 @@ export default class ElmListProducts extends ElmListPages {
       let product = productsObj.products[i];
 
       if (product) {
+        let locationProduct = `${i}-product`;
         trs.push(`${`
-<tr>
+<tr onclick="window.location='#${locationProduct}'">
   <th scope='row'>${i}</th>
   <td>${product.name}</td>
   <td>od ${product.variants[0][1]}</td>

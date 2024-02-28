@@ -36,8 +36,9 @@ export default class ElmListProducts < ElmListPages
       product = products_obj.products[i]
 
       if product
+        location_product = "#{i}-product"
         trs << """
-<tr>
+<tr onclick=\"window.location='##{location_product}'\">
   <th scope='row'>#{i}</th>
   <td>#{product.name}</td>
   <td>od #{product.variants[0][1]}</td>
