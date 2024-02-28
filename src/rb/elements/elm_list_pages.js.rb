@@ -4,7 +4,7 @@ export default class ElmListPages < HTMLElement
 
     @h_elh_select = lambda { |d| select(d.detail.value)}
 
-    @current_page = 0
+    @current_page = localStorage.getItem("current_page")
     
     init_elm()
   end
@@ -48,6 +48,8 @@ export default class ElmListPages < HTMLElement
 
   def select(value)
     @current_page = value
+    localStorage.set_item("current_page", @current_page);
+    
     init_elm()
   end
 end

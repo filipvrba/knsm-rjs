@@ -2,7 +2,7 @@ export default class ElmListPages extends HTMLElement {
   constructor() {
     super();
     this._hElhSelect = d => this.select(d.detail.value);
-    this._currentPage = 0;
+    this._currentPage = localStorage.getItem("current_page");
     this.initElm()
   };
 
@@ -45,6 +45,7 @@ export default class ElmListPages extends HTMLElement {
 
   select(value) {
     this._currentPage = value;
+    localStorage.setItem("current_page", this._currentPage);
     return this.initElm()
   }
 }

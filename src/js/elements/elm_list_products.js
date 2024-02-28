@@ -19,10 +19,10 @@ export default class ElmListProducts extends ElmListPages {
 <table class='table table-striped'>
   <thead>
     <tr>
-      <th scope='col'>#</th>
-      <th scope='col'>Name</th>
-      <th scope='col'>Price</th>
-      <th scope='col'>Category</th>
+      <th scope='col'></th>
+      <th scope='col'>Produkt</th>
+      <th scope='col'>Cena</th>
+      <th scope='col'>Kategorie</th>
     </tr>
   </thead>
   <tbody>
