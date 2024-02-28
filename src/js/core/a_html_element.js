@@ -1,10 +1,16 @@
 export default class AHTMLElement extends HTMLElement {
   constructor() {
-    super()
+    super();
+    this._hHashChange = () => enterHash()
   };
 
   connectedCallback() {
-    return document.title = this.title()
+    document.title = this.title();
+    return window.addEventListener("hashchange", this._hHashChange)
+  };
+
+  disconnectedCallback() {
+    return window.removeEventListener("hashchange", this._hHashChange)
   };
 
   title() {

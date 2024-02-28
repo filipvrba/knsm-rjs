@@ -3,6 +3,8 @@ def get_page(name)
   case name
   when :main
     page = "<elm-main></elm-main>"
+  when :card_detail
+    page = "<elm-card-detail></elm-card-detail>"
   end
   return page
 end

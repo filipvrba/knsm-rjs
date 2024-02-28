@@ -3,7 +3,11 @@ function getPage(name) {
 
   switch (name) {
   case "main":
-    page = "<elm-main></elm-main>"
+    page = "<elm-main></elm-main>";
+    break;
+
+  case "cardDetail":
+    page = "<elm-card-detail></elm-card-detail>"
   };
 
   return page

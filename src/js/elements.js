@@ -11,4 +11,8 @@ window.customElements.define("elm-card", ElmCard);
 import ElmListCards from "./elements/elm_list_cards";
 window.customElements.define("elm-list-cards", ElmListCards);
 import ElmPagination from "./elements/elm_pagination";
-window.customElements.define("elm-pagination", ElmPagination)
+window.customElements.define("elm-pagination", ElmPagination);
+import ElmCardDetail from "./elements/elm_card_detail";
+window.customElements.define("elm-card-detail", ElmCardDetail);
+import ElmListPages from "./elements/elm_list_pages";
+window.customElements.define("elm-list-pages", ElmListPages)

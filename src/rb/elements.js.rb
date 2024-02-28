@@ -19,3 +19,9 @@ window.customElements.define('elm-list-cards', ElmListCards)
 
 import 'ElmPagination', './elements/elm_pagination'
 window.customElements.define('elm-pagination', ElmPagination)
+
+import 'ElmCardDetail', './elements/elm_card_detail'
+window.customElements.define('elm-card-detail', ElmCardDetail)
+
+import 'ElmListPages', './elements/elm_list_pages'
+window.customElements.define('elm-list-pages', ElmListPages)
