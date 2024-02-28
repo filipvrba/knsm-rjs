@@ -7,13 +7,6 @@ export default class ElmMain < AHTMLElement
     init_elm()
   end
 
-  def connectedCallback()
-    super
-  end
-
-  def disconnectedCallback()
-  end
-
   def init_elm()
     template = """
     <div class='container py-5'>

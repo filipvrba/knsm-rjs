@@ -2,6 +2,12 @@ elm-list-products tbody tr {
   cursor: pointer;
 }
 
+a {
+  color: inherit;
+	text-decoration: none;
+  cursor: pointer;
+}
+
 .fix-img {
   width: 100%;
   height: auto;

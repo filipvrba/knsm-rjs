@@ -1,7 +1,7 @@
 export default class AHTMLElement extends HTMLElement {
   constructor() {
     super();
-    this._hHashChange = () => enterHash()
+    this._hHashChange = () => this.enterHash(location.hash.replace("#", ""))
   };
 
   connectedCallback() {
@@ -15,5 +15,16 @@ export default class AHTMLElement extends HTMLElement {
 
   title() {
     return TITLE
+  };
+
+  enterHash(hash) {
+    let index;
+
+    if (hash.match(/-product$/m)) {
+      index = hash.split("-")[0];
+      return changePage("product", {index})
+    } else if (hash.indexOf("products") > -1) {
+      return changePage("products")
+    }
   }
 }

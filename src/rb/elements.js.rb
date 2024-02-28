@@ -28,3 +28,6 @@ window.customElements.define('elm-list-pages', ElmListPages)
 
 import 'ElmListProducts', './elements/elm_list_products'
 window.customElements.define('elm-list-products', ElmListProducts)
+
+import 'ElmProduct', './elements/elm_product'
+window.customElements.define('elm-product', ElmProduct)

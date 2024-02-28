@@ -6,14 +6,6 @@ export default class ElmMain extends AHTMLElement {
     this.initElm()
   };
 
-  connectedCallback() {
-    return super.connectedCallback()
-  };
-
-  disconnectedCallback() {
-    return null
-  };
-
   initElm() {
     let template = `${`
     <div class='container py-5'>

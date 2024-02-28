@@ -12,4 +12,4 @@ ENVS = {
 }
 window.ENVS = ENVS
 
-document.querySelector('#app').innerHTML = get_page(:main)
+change_page(:products)
