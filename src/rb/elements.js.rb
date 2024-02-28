@@ -25,3 +25,6 @@ window.customElements.define('elm-card-detail', ElmCardDetail)
 
 import 'ElmListPages', './elements/elm_list_pages'
 window.customElements.define('elm-list-pages', ElmListPages)
+
+import 'ElmListProducts', './elements/elm_list_products'
+window.customElements.define('elm-list-products', ElmListProducts)

@@ -19,7 +19,7 @@ export default class ElmMain < AHTMLElement
     <div class='container py-5'>
       <elm-header></elm-header>
         <main>
-          <elm-list-cards></elm-list-cards>
+          <elm-list-products></elm-list-products>
         </main>
       <elm-footer></elm-footer>
     </div>

@@ -4,7 +4,6 @@ export default class ElmListPages < HTMLElement
 
     @h_elh_select = lambda { |d| select(d.detail.value)}
 
-    @max_length  = 10
     @current_page = 0
     
     init_elm()
@@ -22,15 +21,22 @@ export default class ElmListPages < HTMLElement
     return 0
   end
 
+  def get_target()
+    class_name = Object.getPrototypeOf(self).constructor.name
+    if class_name
+      return class_name.split(/(?=[A-Z])/).join('-').downcase()
+    else
+      return 'elm-list-pages'
+    end
+  end
+
   def init_elm()
     template = """
-<elm-pagination page='#{@current_page}' pages='#{pages_count()}' target='elm-list-cards'></elm-pagination>
-<hr>
 <div class='row row-cols-1 row-cols-sm-2 g-4'>
   #{init_subelm(@current_page)}
 </div>
 <hr>
-<elm-pagination page='#{@current_page}' pages='#{pages_count()}' target='elm-list-cards'></elm-pagination>
+<elm-pagination page='#{@current_page}' pages='#{pages_count()}' target='#{get_target()}'></elm-pagination>
     """
 
     self.innerHTML = template
