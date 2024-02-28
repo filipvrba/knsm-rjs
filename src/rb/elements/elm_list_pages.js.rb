@@ -22,12 +22,7 @@ export default class ElmListPages < HTMLElement
   end
 
   def get_target()
-    class_name = Object.getPrototypeOf(self).constructor.name
-    if class_name
-      return class_name.split(/(?=[A-Z])/).join('-').downcase()
-    else
-      return 'elm-list-pages'
-    end
+    return 'elm-list-pages'
   end
 
   def init_elm()

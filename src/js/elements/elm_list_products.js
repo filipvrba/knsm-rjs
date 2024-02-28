@@ -14,6 +14,10 @@ export default class ElmListProducts extends ElmListPages {
     return parseInt(productsObj.products.length / this.maxLength())
   };
 
+  getTarget() {
+    return "elm-list-products"
+  };
+
   initSubelm(currentPage) {
     let template = `${`
 <table class='table table-striped'>

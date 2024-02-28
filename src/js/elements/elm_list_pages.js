@@ -19,13 +19,7 @@ export default class ElmListPages extends HTMLElement {
   };
 
   getTarget() {
-    let className = Object.getPrototypeOf(this).constructor.name;
-
-    if (className) {
-      return className.split(/(?=[A-Z])/).join("-").toLowerCase()
-    } else {
-      return "elm-list-pages"
-    }
+    return "elm-list-pages"
   };
 
   initElm() {

@@ -14,6 +14,10 @@ export default class ElmListProducts < ElmListPages
     (products_obj.products.length / max_length()).to_i
   end
 
+  def get_target()
+    return 'elm-list-products'
+  end
+
   def init_subelm(current_page)
     template = """
 <table class='table table-striped'>
