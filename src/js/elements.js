@@ -1,3 +1,5 @@
+import AHTMLElement from "./core/a_html_element";
+window.customElements.define("elm-ahtml", AHTMLElement);
 import ElmMain from "./elements/elm_main";
 window.customElements.define("elm-main", ElmMain);
 import ElmHeader from "./elements/elm_header";

@@ -1,4 +1,7 @@
 
+import 'AHTMLElement', './core/a_html_element'
+window.customElements.define('elm-ahtml', AHTMLElement)
+
 import 'ElmMain', './elements/elm_main'
 window.customElements.define('elm-main', ElmMain)
 

@@ -6,7 +6,8 @@ export default class AHTMLElement extends HTMLElement {
 
   connectedCallback() {
     document.title = this.title();
-    return window.addEventListener("hashchange", this._hHashChange)
+    window.addEventListener("hashchange", this._hHashChange);
+    return this.initElm()
   };
 
   disconnectedCallback() {
@@ -23,8 +24,12 @@ export default class AHTMLElement extends HTMLElement {
     if (hash.match(/-product$/m)) {
       index = hash.split("-")[0];
       return changePage("product", {index})
-    } else if (hash.indexOf("products") > -1) {
+    } else if (hash.indexOf("products") > -1 || hash === "") {
       return changePage("products")
     }
+  };
+
+  initElm() {
+    return this._hHashChange()
   }
 }

@@ -6,4 +6,4 @@ const TITLE = document.title;
 window.TITLE = TITLE;
 const ENVS = {ephSelect: "eph_select"};
 window.ENVS = ENVS;
-changePage("products")
+changePage("main")

@@ -1,6 +1,8 @@
 def get_page(name, options = {})
   page = "<elm-error code='404'></elm-error>"
   case name
+  when :main
+    page = "<elm-ahtml></elm-ahtml>"
   when :products
     page = "<elm-main></elm-main>"
   when :card_detail

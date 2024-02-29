@@ -7,7 +7,9 @@ export default class AHTMLElement < HTMLElement
 
   def connected_callback()
     document.title = title()
-    window.add_event_listener('hashchange', @h_hash_change) 
+    window.add_event_listener('hashchange', @h_hash_change)
+
+    init_elm()
   end
 
   def disconnected_callback()
@@ -22,8 +24,12 @@ export default class AHTMLElement < HTMLElement
     if hash.match(/-product$/)
       index = hash.split('-')[0]
       change_page(:product, {index: index})
-    elsif hash.index("products") > -1
+    elsif hash.index("products") > -1 or hash == ""
       change_page(:products)
     end
+  end
+
+  def init_elm()
+    @h_hash_change.call
   end
 end

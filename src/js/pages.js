@@ -2,6 +2,10 @@ function getPage(name, options={}) {
   let page = "<elm-error code='404'></elm-error>";
 
   switch (name) {
+  case "main":
+    page = "<elm-ahtml></elm-ahtml>";
+    break;
+
   case "products":
     page = "<elm-main></elm-main>";
     break;

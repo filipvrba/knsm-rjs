@@ -3,8 +3,6 @@ import 'AHTMLElement', '../core/a_html_element'
 export default class ElmMain < AHTMLElement
   def initialize
     super
-    
-    init_elm()
   end
 
   def init_elm()

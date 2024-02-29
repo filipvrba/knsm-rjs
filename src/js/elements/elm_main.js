@@ -2,8 +2,7 @@ import AHTMLElement from "../core/a_html_element";
 
 export default class ElmMain extends AHTMLElement {
   constructor() {
-    super();
-    this.initElm()
+    super()
   };
 
   initElm() {

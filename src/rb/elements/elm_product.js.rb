@@ -7,8 +7,6 @@ export default class ElmProduct < AHTMLElement
 
     @index = self.get_attribute('index').to_i
     @values = products_obj.products[@index]
-    
-    init_elm()
   end
 
   def title()

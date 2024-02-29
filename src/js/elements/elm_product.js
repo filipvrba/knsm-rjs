@@ -5,8 +5,7 @@ export default class ElmProduct extends AHTMLElement {
   constructor() {
     super();
     this._index = parseInt(this.getAttribute("index"));
-    this._values = productsObj.products[this._index];
-    this.initElm()
+    this._values = productsObj.products[this._index]
   };
 
   title() {

@@ -12,4 +12,4 @@ ENVS = {
 }
 window.ENVS = ENVS
 
-change_page(:products)
+change_page(:main)
