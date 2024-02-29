@@ -8,7 +8,8 @@ TITLE = document.title
 window.TITLE = TITLE
 
 ENVS = {
-  eph_select: "eph_select"
+  eph_select: "eph_select",
+  fi_input: "fi_input",
 }
 window.ENVS = ENVS
 

@@ -21,4 +21,12 @@ window.customElements.define("elm-list-pages", ElmListPages);
 import ElmListProducts from "./elements/elm_list_products";
 window.customElements.define("elm-list-products", ElmListProducts);
 import ElmProduct from "./elements/elm_product";
-window.customElements.define("elm-product", ElmProduct)
+window.customElements.define("elm-product", ElmProduct);
+import ElmFilter from "./elements/elm_filter";
+window.customElements.define("elm-filter", ElmFilter);
+import ElmListPagesFilter from "./elements/elm_list_pages_filter";
+
+window.customElements.define(
+  "elm-list-pages-filter",
+  ElmListPagesFilter
+)

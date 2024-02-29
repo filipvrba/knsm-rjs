@@ -34,3 +34,9 @@ window.customElements.define('elm-list-products', ElmListProducts)
 
 import 'ElmProduct', './elements/elm_product'
 window.customElements.define('elm-product', ElmProduct)
+
+import 'ElmFilter', './elements/elm_filter'
+window.customElements.define('elm-filter', ElmFilter)
+
+import 'ElmListPagesFilter', './elements/elm_list_pages_filter'
+window.customElements.define('elm-list-pages-filter', ElmListPagesFilter)

@@ -1,7 +1,7 @@
 import productsObj from "../../json/products.json";
-import ElmListPages from "./elm_list_pages";
+import ElmListPagesFilter from "./elm_list_pages_filter";
 
-export default class ElmListProducts extends ElmListPages {
+export default class ElmListProducts extends ElmListPagesFilter {
   constructor() {
     super()
   };
@@ -10,8 +10,24 @@ export default class ElmListProducts extends ElmListPages {
     return 30
   };
 
+  getProducts() {
+    let result = [];
+    let index = 0;
+
+    for (let product of productsObj.products) {
+      if (product.name.toLowerCase().match(new RegExp(this._filterValue))) {
+        product.index = index;
+        result.push(product)
+      };
+
+      index++
+    };
+
+    return result
+  };
+
   pagesCount() {
-    return parseInt(productsObj.products.length / this.maxLength())
+    return parseInt(this.getProducts().length / this.maxLength())
   };
 
   getTarget() {
@@ -38,13 +54,13 @@ export default class ElmListProducts extends ElmListPages {
     let currentEndId = currentPage * this.maxLength();
 
     for (let i = currentEndId; i < currentEndId + this.maxLength(); i++) {
-      let product = productsObj.products[i];
+      let product = this.getProducts()[i];
 
       if (product) {
-        let locationProduct = `${i}-product`;
+        let locationProduct = `${product.index}-product`;
         trs.push(`${`
 <tr onclick="window.location='#${locationProduct}'">
-  <th scope='row'>${i}</th>
+  <th scope='row'>${product.index}</th>
   <td>${product.name}</td>
   <td>od ${product.variants[0][1]}</td>
   <td>${product.category[0]}</td>

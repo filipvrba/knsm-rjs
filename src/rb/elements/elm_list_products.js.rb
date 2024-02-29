@@ -1,7 +1,7 @@
 import 'productsObj', '../../json/products.json'
-import 'ElmListPages', './elm_list_pages'
+import 'ElmListPagesFilter', './elm_list_pages_filter'
 
-export default class ElmListProducts < ElmListPages
+export default class ElmListProducts < ElmListPagesFilter
   def initialize
     super
   end
@@ -10,8 +10,21 @@ export default class ElmListProducts < ElmListPages
     return 30
   end
 
+  def get_products()
+    result = []
+    index = 0
+    products_obj.products.each do |product|
+      if product.name.downcase().match(/#{@filter_value}/)
+        product[:index] = index 
+        result << product
+      end
+      index += 1
+    end
+    return result
+  end
+
   def pages_count()
-    (products_obj.products.length / max_length()).to_i
+    (get_products().length / max_length()).to_i
   end
 
   def get_target()
@@ -37,13 +50,13 @@ export default class ElmListProducts < ElmListPages
     trs = []
     current_end_id = current_page * max_length()
     (current_end_id...(current_end_id + max_length())).each do |i|
-      product = products_obj.products[i]
+      product = get_products()[i]
 
       if product
-        location_product = "#{i}-product"
+        location_product = "#{product.index}-product"
         trs << """
 <tr onclick=\"window.location='##{location_product}'\">
-  <th scope='row'>#{i}</th>
+  <th scope='row'>#{product.index}</th>
   <td>#{product.name}</td>
   <td>od #{product.variants[0][1]}</td>
   <td>#{product.category[0]}</td>
