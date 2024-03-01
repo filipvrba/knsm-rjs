@@ -14,7 +14,9 @@ export default class ElmListProducts < ElmListPagesFilter
     result = []
     index = 0
     products_obj.products.each do |product|
-      if product.name.downcase().match(/#{@filter_value}/)
+      if product.name.downcase().match(/#{@filter_value}/) ||
+         product.category.join(' ').downcase().match(/#{@filter_value}/)
+        
         product[:index] = index 
         result << product
       end
