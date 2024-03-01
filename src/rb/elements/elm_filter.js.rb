@@ -10,6 +10,8 @@ export default class ElmFilter < HTMLElement
     init_elm()
 
     @floating_input = document.get_element_by_id('floatingInput')
+
+    badges(@floating_input.value != "")
   end
 
   def connectedCallback()
@@ -27,6 +29,11 @@ export default class ElmFilter < HTMLElement
     <h2 class='accordion-header'>
       <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFilter' aria-expanded='false' aria-controls='collapseFilter'>
         Filter
+
+        <span id='filter-badges' class='position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle'>
+          <span class='visually-hidden'>New alerts</span>
+        </span>
+        
       </button>
     </h2>
     <div id='collapseFilter' class='accordion-collapse collapse' data-bs-parent='#accordionFilter'>
@@ -45,6 +52,7 @@ export default class ElmFilter < HTMLElement
   end
 
   def fi_input(value)
+    badges(value != "")
     event = new CustomEvent(ENVS[:fi_input], {
       detail: {
         value: value
@@ -52,6 +60,16 @@ export default class ElmFilter < HTMLElement
     })
 
     document.querySelector(@target).dispatch_event(event)
+  end
+
+  def badges(is_active)
+    filter_budges = document.get_element_by_id('filter-badges')
+
+    unless is_active
+      filter_budges.class_list.add('visually-hidden')
+    else
+      filter_budges.class_list.remove('visually-hidden')
+    end
   end
 end
 

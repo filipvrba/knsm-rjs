@@ -5,7 +5,8 @@ export default class ElmFilter extends HTMLElement {
     this._target = this.getAttribute("target");
     this._value = this.getAttribute("value");
     this.initElm();
-    this._floatingInput = document.getElementById("floatingInput")
+    this._floatingInput = document.getElementById("floatingInput");
+    this.badges(this._floatingInput.value !== "")
   };
 
   connectedCallback() {
@@ -26,6 +27,11 @@ export default class ElmFilter extends HTMLElement {
     <h2 class='accordion-header'>
       <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFilter' aria-expanded='false' aria-controls='collapseFilter'>
         Filter
+
+        <span id='filter-badges' class='position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle'>
+          <span class='visually-hidden'>New alerts</span>
+        </span>
+        
       </button>
     </h2>
     <div id='collapseFilter' class='accordion-collapse collapse' data-bs-parent='#accordionFilter'>
@@ -43,7 +49,13 @@ export default class ElmFilter extends HTMLElement {
   };
 
   fiInput(value) {
+    this.badges(value !== "");
     let event = new CustomEvent(ENVS.fiInput, {detail: {value}});
     return document.querySelector(this._target).dispatchEvent(event)
+  };
+
+  badges(isActive) {
+    let filterBudges = document.getElementById("filter-badges");
+    return isActive ? filterBudges.classList.remove("visually-hidden") : filterBudges.classList.add("visually-hidden")
   }
 }
