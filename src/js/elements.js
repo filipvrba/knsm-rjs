@@ -29,4 +29,7 @@ import ElmListPagesFilter from "./elements/elm_list_pages_filter";
 window.customElements.define(
   "elm-list-pages-filter",
   ElmListPagesFilter
-)
+);
+
+import ElmFilterTick from "./elements/elm_filter_tick";
+window.customElements.define("elm-filter-tick", ElmFilterTick)

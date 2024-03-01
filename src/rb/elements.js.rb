@@ -40,3 +40,6 @@ window.customElements.define('elm-filter', ElmFilter)
 
 import 'ElmListPagesFilter', './elements/elm_list_pages_filter'
 window.customElements.define('elm-list-pages-filter', ElmListPagesFilter)
+
+import 'ElmFilterTick', './elements/elm_filter_tick'
+window.customElements.define('elm-filter-tick', ElmFilterTick)

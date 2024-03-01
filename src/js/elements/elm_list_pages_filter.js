@@ -33,7 +33,7 @@ export default class ElmListPagesFilter extends ElmListPages {
 
   getTemplate() {
     return `${`
-    <elm-filter value='${this._filterValue}' target='${this.getTarget()}'></elm-filter>
+    <elm-filter-tick value='${this._filterValue}' target='${this.getTarget()}'></elm-filter-tick>
     <br>
     ${super.getTemplate()}
     `}`

@@ -34,7 +34,7 @@ export default class ElmListPagesFilter < ElmListPages
 
   def get_template()
     """
-    <elm-filter value='#{@filter_value}' target='#{get_target()}'></elm-filter>
+    <elm-filter-tick value='#{@filter_value}' target='#{get_target()}'></elm-filter-tick>
     <br>
     #{super}
     """
