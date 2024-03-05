@@ -68,6 +68,6 @@ export default class ElmListProducts < ElmListPagesFilter
     end
     
 
-    return template.sub('*', trs.join('<br>'))
+    return template.sub('*', trs.join(''))
   end
 end

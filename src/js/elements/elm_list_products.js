@@ -69,6 +69,6 @@ export default class ElmListProducts extends ElmListPagesFilter {
       }
     };
 
-    return template.replace("*", trs.join("<br>"))
+    return template.replace("*", trs.join(""))
   }
 }
