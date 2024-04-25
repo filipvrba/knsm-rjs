@@ -15,7 +15,7 @@ export default class ElmListProducts extends ElmListPagesFilter {
     let index = 0;
 
     for (let product of productsObj.products) {
-      if (product.name.toLowerCase().match(new RegExp(this._filterValue)) || product.category.join(" ").toLowerCase().match(new RegExp(this._filterValue))) {
+      if (product.name.toLowerCase().match(new RegExp(this._filterValue.toLowerCase())) || product.category.join(" ").toLowerCase().match(new RegExp(this._filterValue.toLowerCase()))) {
         product.index = index;
         result.push(product)
       };
